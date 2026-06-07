@@ -1,0 +1,119 @@
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Cormorant Garamond',serif;
+background:#fffaf7;
+color:#333;
+overflow-x:hidden;
+}
+
+.hero{
+height:100vh;
+background:url("assets/photo1.jpg");
+background-size:cover;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+text-align:center;
+}
+
+.overlay{
+background:rgba(0,0,0,.45);
+padding:40px;
+width:100%;
+height:100%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+color:white;
+}
+
+.hero h1{
+font-size:4rem;
+line-height:1.2;
+}
+
+.hero span{
+display:block;
+font-family:'Pinyon Script';
+font-size:4rem;
+margin:10px 0;
+}
+
+.quote{
+font-size:1.5rem;
+margin:20px;
+}
+
+.btn{
+background:white;
+color:black;
+padding:12px 30px;
+text-decoration:none;
+border-radius:50px;
+}
+
+.card,
+.countdown-section,
+.events,
+.venue,
+.footer{
+padding:80px 20px;
+text-align:center;
+}
+
+.gallery{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+gap:10px;
+padding:30px;
+}
+
+.gallery img{
+width:100%;
+border-radius:20px;
+}
+
+.event{
+margin:30px;
+padding:20px;
+background:white;
+border-radius:20px;
+box-shadow:0 5px 20px rgba(0,0,0,.1);
+}
+
+#countdown{
+font-size:2rem;
+margin-top:20px;
+}
+
+.venue a{
+display:inline-block;
+padding:15px 30px;
+background:#ff6b81;
+color:white;
+text-decoration:none;
+border-radius:50px;
+}
+
+.footer{
+background:#ffeef1;
+}
+
+#musicBtn{
+position:fixed;
+top:20px;
+right:20px;
+z-index:999;
+padding:15px;
+border:none;
+border-radius:50%;
+font-size:20px;
+cursor:pointer;
+}
