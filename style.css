@@ -7,76 +7,122 @@ scroll-behavior:smooth;
 
 body{
 font-family:'Poppins',sans-serif;
-background:#07111f;
-color:white;
+background:#fffdf8;
+color:#3e4655;
 overflow-x:hidden;
 }
 
-h1,h2,h3{
-font-family:'Cormorant Garamond',serif;
-}
-
-.hero{
+#cover{
+position:fixed;
+top:0;
+left:0;
+width:100%;
 height:100vh;
+z-index:9999;
+
 display:flex;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:20px;
+
 background:
 linear-gradient(
-180deg,
-#07111f,
-#10233e,
-#07111f
+135deg,
+#fffdf8,
+#fef6f7,
+#eef4ff
 );
+
+transition:1.5s;
 }
 
-.hero-content{
-max-width:900px;
+.cover-content{
+padding:30px;
 }
 
-.tagline{
-letter-spacing:4px;
-margin-bottom:20px;
-color:#b9cde5;
-}
-
-.hero h1{
+.cover-content h1{
+font-family:'Cormorant Garamond',serif;
 font-size:4rem;
-font-weight:500;
 line-height:1.2;
 }
 
 .heart{
 display:block;
+margin:15px 0;
+color:#c9a86a;
+}
+
+.tamil{
+font-family:'Noto Serif Tamil',serif;
 font-size:2rem;
-margin:20px 0;
-color:#f2c4c4;
+margin-top:20px;
+color:#7a97b8;
 }
 
-.quote{
-margin-top:30px;
-font-size:1.2rem;
-color:#d7e4f3;
-line-height:1.8;
+.date{
+margin-top:15px;
+letter-spacing:3px;
 }
 
-.btn{
-display:inline-block;
+#openBtn{
 margin-top:40px;
-padding:14px 35px;
+padding:15px 40px;
+border:none;
 border-radius:50px;
-text-decoration:none;
+cursor:pointer;
+
+background:#7a97b8;
 color:white;
-background:rgba(255,255,255,0.1);
-backdrop-filter:blur(10px);
-border:1px solid rgba(255,255,255,0.2);
+
+font-size:16px;
 transition:.3s;
 }
 
-.btn:hover{
-transform:translateY(-3px);
+#openBtn:hover{
+transform:translateY(-4px);
+}
+
+.cover-hide{
+opacity:0;
+visibility:hidden;
+}
+
+#mainContent{
+opacity:0;
+transform:translateY(80px);
+transition:1.5s;
+}
+
+.show{
+opacity:1;
+transform:translateY(0);
+}
+
+.hero{
+padding:150px 20px;
+text-align:center;
+background:
+linear-gradient(
+180deg,
+#eef4ff,
+#fffdf8
+);
+}
+
+.hero h1{
+font-family:'Cormorant Garamond',serif;
+font-size:4rem;
+}
+
+.hero span{
+display:block;
+color:#c9a86a;
+margin:10px 0;
+}
+
+.hero p{
+margin-top:20px;
+font-size:1.2rem;
 }
 
 section{
@@ -84,24 +130,10 @@ padding:100px 20px;
 text-align:center;
 }
 
-.love-note{
-max-width:800px;
-margin:auto;
-}
-
-.love-note h2{
+h2{
+font-family:'Cormorant Garamond',serif;
 font-size:3rem;
-margin-bottom:30px;
-}
-
-.love-note p{
-font-size:1.1rem;
-line-height:2;
-color:#dce7f5;
-}
-
-.countdown h2{
-margin-bottom:50px;
+margin-bottom:25px;
 }
 
 .countdown{
@@ -109,51 +141,48 @@ display:flex;
 justify-content:center;
 gap:20px;
 flex-wrap:wrap;
-margin-top:50px;
 }
 
-.card{
-width:150px;
+.box{
+background:white;
 padding:30px;
-border-radius:25px;
-background:rgba(255,255,255,0.08);
-backdrop-filter:blur(20px);
-border:1px solid rgba(255,255,255,0.1);
+width:140px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,.08);
 }
 
-.card span{
-font-size:3rem;
-display:block;
-margin-bottom:10px;
+.box span{
+font-size:2.5rem;
+font-weight:bold;
+color:#7a97b8;
 }
 
 .events{
-background:#091827;
+background:#f8fbff;
 }
 
-.event-card{
+.card{
+background:white;
 max-width:500px;
-margin:30px auto;
+margin:20px auto;
 padding:40px;
 border-radius:25px;
-background:rgba(255,255,255,0.05);
+box-shadow:0 10px 25px rgba(0,0,0,.08);
 }
 
-.event-card h3{
+.card h3{
+font-family:'Cormorant Garamond',serif;
 font-size:2rem;
 margin-bottom:20px;
-}
-
-.event-card p{
-margin:10px 0;
+color:#7a97b8;
 }
 
 .gallery-grid{
-max-width:1100px;
-margin:auto;
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:25px;
+max-width:1200px;
+margin:auto;
 }
 
 .gallery-grid img{
@@ -168,52 +197,41 @@ transition:.4s;
 transform:scale(1.03);
 }
 
-.location p{
-margin:20px 0;
-font-size:1.1rem;
+.venue a{
+display:inline-block;
+margin-top:25px;
+padding:14px 30px;
+border-radius:50px;
+text-decoration:none;
+background:#7a97b8;
+color:white;
 }
 
 .footer{
-padding-bottom:120px;
-}
-
-.footer h2{
-font-size:3rem;
-margin-bottom:20px;
+background:#eef4ff;
 }
 
 .footer h3{
-margin-top:40px;
-font-size:2rem;
-color:#d7c18a;
-}
-
-.stars{
-position:fixed;
-width:100%;
-height:100%;
-top:0;
-left:0;
-pointer-events:none;
-background-image:
-radial-gradient(circle,#ffffff 1px,transparent 1px);
-background-size:80px 80px;
-opacity:.12;
+margin-top:30px;
+color:#c9a86a;
 }
 
 @media(max-width:768px){
 
+.cover-content h1{
+font-size:2.5rem;
+}
+
 .hero h1{
-font-size:2.7rem;
+font-size:2.5rem;
 }
 
-.love-note h2,
-.footer h2{
-font-size:2.2rem;
+.tamil{
+font-size:1.5rem;
 }
 
-.card{
-width:130px;
+h2{
+font-size:2rem;
 }
 
 }
