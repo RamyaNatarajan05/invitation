@@ -1,35 +1,50 @@
-const weddingDate = new Date("July 5, 2026 06:00:00");
+document
+.getElementById("openBtn")
+.addEventListener("click",function(){
 
-function updateCountdown(){
+document
+.getElementById("cover")
+.classList
+.add("cover-hide");
 
-const now = new Date();
-
-const diff = weddingDate - now;
-
-const days = Math.floor(diff/(1000*60*60*24));
-const hours = Math.floor((diff/(1000*60*60))%24);
-const mins = Math.floor((diff/(1000*60))%60);
-const secs = Math.floor((diff/1000)%60);
-
-document.getElementById("countdown").innerHTML =
-`${days} Days ${hours} Hrs ${mins} Min ${secs} Sec`;
-
-}
-
-setInterval(updateCountdown,1000);
-
-const music=document.getElementById("bgMusic");
-const btn=document.getElementById("musicBtn");
-
-btn.addEventListener("click",()=>{
-
-if(music.paused){
-music.play();
-btn.innerHTML="🔊";
-}
-else{
-music.pause();
-btn.innerHTML="🎵";
-}
+document
+.getElementById("mainContent")
+.classList
+.add("show");
 
 });
+
+const weddingDate =
+new Date("July 5, 2026 00:00:00").getTime();
+
+setInterval(() => {
+
+const now = new Date().getTime();
+
+const distance = weddingDate - now;
+
+document.getElementById("days").innerHTML =
+Math.floor(distance / (1000 * 60 * 60 * 24));
+
+document.getElementById("hours").innerHTML =
+Math.floor(
+(distance % (1000 * 60 * 60 * 24))
+/
+(1000 * 60 * 60)
+);
+
+document.getElementById("minutes").innerHTML =
+Math.floor(
+(distance % (1000 * 60 * 60))
+/
+(1000 * 60)
+);
+
+document.getElementById("seconds").innerHTML =
+Math.floor(
+(distance % (1000 * 60))
+/
+1000
+);
+
+},1000);
