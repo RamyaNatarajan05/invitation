@@ -9,29 +9,47 @@ document.addEventListener("DOMContentLoaded", () => {
     const petalsHolder = document.getElementById("petalsHolder");
 
     // ================= 1. OPEN INVITATION SCISSOR SPLIT TRANSITION =================
-    openBtn.addEventListener("click", () => {
-        // Trigger Curtain Animation Layer via Class Injection
-        curtainCover.classList.add("open");
-        
-        // Expose hidden dashboard engine layout smoothly
+// ================= 1. OPEN INVITATION SCISSOR SPLIT TRANSITION =================
+
+openBtn.addEventListener("click", () => {
+
+    curtainCover.classList.add("open");
+
+    playAudio();
+
+    setTimeout(() => {
+
+        document
+        .getElementById("loveReveal")
+        .classList
+        .add("show");
+
+    }, 1300);
+
+    setTimeout(() => {
+
+        curtainCover.classList.add("gone");
+
+        document
+        .getElementById("loveReveal")
+        .classList
+        .remove("show");
+
         mainContent.classList.remove("hidden");
+
         setTimeout(() => {
             mainContent.classList.add("visible");
         }, 100);
 
-        // Terminate DOM overhead footprints after movement transitions finalize
-        setTimeout(() => {
-            curtainCover.classList.add("gone");
-        }, 1300);
-
-        // Intentional Audio Playback Initialization on user explicit gesture event 
-        playAudio();
-        // Fire procedural petal generator pipeline loop
         startPetalsGenerator();
-        // Draw maps instance render geometry calculations safely after container size settles
-        setTimeout(initializeEventMap, 400);
-    });
 
+        setTimeout(() => {
+            initializeEventMap();
+        }, 400);
+
+    }, 3800);
+
+});
     // ================= 2. BACKGROUND SOUND MANAGEMENT MODULE =================
     function playAudio() {
         bgMusic.play().then(() => {
@@ -140,4 +158,5 @@ document.addEventListener("DOMContentLoaded", () => {
             spawnIndividualPetal();
         });
     }
+    
 });
