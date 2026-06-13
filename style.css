@@ -368,7 +368,120 @@ button#openBtn:hover {
 footer { text-align: center; padding-top: 40px; border-top: 1px solid var(--card-border); }
 footer p { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--gold); }
 .footer-names { font-family: 'Cinzel', serif; font-size: 1rem; letter-spacing: 2px; margin-top: 5px; color: var(--dusty-blue); }
+#loveReveal{
 
+    position:fixed;
+
+    inset:0;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    background:
+    rgba(255,255,255,.95);
+
+    backdrop-filter:blur(8px);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transition:.5s;
+
+    z-index:9999;
+}
+
+#loveReveal.show{
+
+    opacity:1;
+
+    visibility:visible;
+}
+
+.love-heart-big{
+
+    font-size:4rem;
+
+    color:#d4af37;
+
+    margin-bottom:20px;
+
+    animation:pulseHeart 2s infinite;
+}
+
+.love-content h2{
+
+    font-family:'Cormorant Garamond',serif;
+
+    font-size:2.5rem;
+
+    color:#324865;
+
+    margin:15px 0;
+}
+
+.love-line{
+
+    width:80px;
+
+    height:1px;
+
+    background:#d4af37;
+
+    margin:auto;
+}
+.wishes-section{
+
+    max-width:850px;
+
+    margin:80px auto;
+
+    padding:50px 30px;
+
+    text-align:center;
+}
+
+.wishes-subtitle{
+
+    color:#6b7280;
+
+    margin-top:10px;
+}
+
+.wishes-form{
+
+    margin-top:30px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:18px;
+}
+
+.wishes-form input,
+.wishes-form textarea{
+
+    padding:16px;
+
+    border-radius:15px;
+
+    border:1px solid #d7dee8;
+
+    font-family:'Poppins',sans-serif;
+}
+
+.wish-btn{
+
+    width:220px;
+
+    margin:auto;
+}
 /* ================= ANIMATIONS & MOBILE RESPONSIVENESS ================= */
 @keyframes floatDown {
     0% { transform: translateY(-10px) rotate(0deg); opacity: 0; }
