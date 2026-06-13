@@ -1,44 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Wedding Invitation</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500&family=Noto+Serif+Tamil&display=swap" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Invitation | Sathiyagirinadhan & Jayashri</title>
+    
+    <!-- Premium Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Great+Vibes&family=Poppins:wght@300;400;500;600&family=Noto+Serif+Tamil:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Leaflet Map CSS for interactive location feature -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<div class="cover-content">
+    <!-- Background Music Element -->
+    <!-- Replace URL with your actual audio asset link -->
+    <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    </audio>
 
-    <p class="invite-text">
-        Wedding Invitation
-    </p>
-
-    <h1>
-        Sathiyagirinadhan
-        <span>&</span>
-        Jayashri
-    </h1>
-
-    <p class="quote">
-        Two hearts. One promise.
-        A lifetime of love.
-    </p>
-
-    <p class="date">
-        05 July 2026
-    </p>
-
-    <button id="openBtn">
-        Open Invitation
+    <button id="musicToggle" class="music-btn" aria-label="Toggle Music">
+        <span class="icon">🎵</span>
     </button>
 
-</div>
+    <!-- Floating Petals Container -->
+    <div class="petals-container" id="petalsHolder"></div>
 
+    <!-- ================= PAGE 1: SPLIT CURTAIN COVER ================= -->
+    <div class="split-cover-wrapper" id="curtainCover">
+        <div class="curtain left-curtain"></div>
+        <div class="curtain right-curtain"></div>
+        
+        <div class="cover-card-container">
+            <div class="card cover-card">
+                <p class="invite-text">Wedding Invitation</p>
+                <h1>
+                    Sathiyagirinadhan
+                    <span>&</span>
+                    Jayashri
+                </h1>
+                <p class="quote">
+                    Two hearts. One promise.<br>
+                    <span class="highlight">A lifetime of love.</span>
+                </p>
+                <p class="date">05 July 2026</p>
+                <button id="openBtn">Open Invitation</button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ================= PAGE 2: MAIN INVITATION CONTENT ================= -->
+    <main class="main-content hidden" id="mainContent">
+        
+        <!-- Elegant Floral Accents -->
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner top-right"></div>
+
+        <!-- Hero Welcome Header -->
+        <header class="hero-section">
+            <p class="tamil-quote">"அவளும் நானும்..."</p>
+            <h2 class="section-title-script">Save Our Date</h2>
+            <div class="gold-divider">✨</div>
+        </header>
+
+        <!-- Countdown Timer Component -->
+        <section class="countdown-container">
+            <div class="timer-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="timer-box">
+                <span id="hours">00</span>
+                <p>Hrs</p>
+            </div>
+            <div class="timer-box">
+                <span id="minutes">00</span>
+                <p>Min</p>
+            </div>
+            <div class="timer-box">
+                <span id="seconds">00</span>
+                <p>Sec</p>
+            </div>
+        </section>
+
+        <!-- Wedding & Reception Cards Grid -->
+        <section class="events-grid">
+            <!-- Card 1: Muhurtham -->
+            <div class="event-card">
+                <div class="card-inner-border">
+                    <div class="gold-seal">⚜️</div>
+                    <h3>The Wedding</h3>
+                    <p class="event-date">Sunday, July 5, 2026</p>
+                    <p class="event-time">⏱️ 9:00 AM - 10:30 AM</p>
+                    <div class="line-deco"></div>
+                    <p class="venue-title">Traditional Marriage Hall</p>
+                    <p class="venue-details">Main Road, Landmark Area,<br>Chennai, Tamil Nadu</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Reception -->
+            <div class="event-card">
+                <div class="card-inner-border">
+                    <div class="gold-seal">⚜️</div>
+                    <h3>The Reception</h3>
+                    <p class="event-date">Saturday, July 4, 2026</p>
+                    <p class="event-time">⏱️ From 6:30 PM Onwards</p>
+                    <div class="line-deco"></div>
+                    <p class="venue-title">Grand Palace Ballroom</p>
+                    <p class="venue-details">Main Road, Landmark Area,<br>Chennai, Tamil Nadu</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Slider -->
+        <section class="gallery-section">
+            <h2 class="section-heading">Captured Moments</h2>
+            <div class="slider-wrapper">
+                <div class="slider" id="imageSlider">
+                    <!-- Placeholder premium couple/nature shots. Replace src with your photos -->
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80" alt="Moment 1" class="active">
+                    <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=800&q=80" alt="Moment 2">
+                    <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=800&q=80" alt="Moment 3">
+                </div>
+                <button class="slider-btn prev" id="prevSlide">&#10094;</button>
+                <button class="slider-btn next" id="nextSlide">&#10095;</button>
+            </div>
+        </section>
+
+        <!-- Map & Venue Navigation Section -->
+        <section class="map-section">
+            <h2 class="section-heading">Locate Venue</h2>
+            <div id="map"></div>
+            <a href="https://maps.google.com" target="_blank" class="direction-btn">📍 Open in Google Maps</a>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>We await your blessings!</p>
+            <div class="footer-names">Sathiyagirinadhan & Jayashri</div>
+        </footer>
+
+    </main>
+
+    <!-- Leaflet JS Map Script Dependency -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
